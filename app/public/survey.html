@@ -188,6 +188,24 @@ $(".submit").on("click",function(event){
     }
 })
 
+$.post('/api/friends', newFriend, function(data){
+    $("#name-input").val(""),
+    $("#email-input").val(""),     
+    $("#image-input").val(""),
+    $("#qOne").val(),
+    $("#qTwo").val(),
+    $("#qThree").val(),
+    $("#qFour").val(),
+    $("#qFive").val(),
+    $("#qSix").val(),
+    $("#qSeven").val()
+    $("#qEight").val(),
+    $("#qNine").val(),
+    $("#qTen").val(),
+    $("#qEleven").val(),
+    $("#qTwelve").val()    
+})
+
 </script>
 
 
