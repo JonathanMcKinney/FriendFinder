@@ -15,19 +15,27 @@ module.exports = function(app){
             var totalScoreArr = [];
             totalScoreArr.push(Number(friendArr[i].qOne), Number(friendArr[i].qTwo), Number(friendArr[i].qThree), Number(friendArr[i].qFour), Number(friendArr[i].qFive), Number(friendArr[i].qSix), Number(friendArr[i].qSeven), Number(friendArr[i].qEight), Number(friendArr[i].qNine), Number(friendArr[i].qTen), Number(friendArr[i].qEleven), Number(friendArr[i].qTwelve));
             
-            var arrTotal = 0;
+            var userTotal = 0;
             totalScoreArr.forEach(function(num) {
-                arrTotal += num;
+                userTotal += num;
                 return arrTotal;
             })
             
             
             
-            comparisonArr.push(arrTotal);
+            comparisonArr.push(userTotal);
             
-            console.log(totalScoreArr);
-            console.log(arrTotal)
+            console.log("this is an array of user's scores " + totalScoreArr);
         }
-        console.log(comparisonArr);
+        console.log("this is the sum of the user's scores " + userTotal)
+        console.log("this is an array of all user totals: " + comparisonArr);
+
+        for (var i = 0; i < comparisonArr.length; i++) {
+            if(userTotal === comparisonArr[i]) {
+                matchIndex = i;
+                return;  
+            }
+        }
+
     })
 };
